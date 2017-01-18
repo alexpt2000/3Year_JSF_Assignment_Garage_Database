@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Garage - Find All Vehicles</title>
+</h:head>
+
+<h:body>
+	<h:form>
+
+		<h1>Find All Vehicles</h1>
+
+		<table>
+			<tbody>
+
+				<tr>
+					<td>Price:</td>
+					<td><h:selectOneMenu value="#{findVehicles.priceType}">
+							<f:selectItem itemValue="lessthan" itemLabel="Less Than" />
+							<f:selectItem itemValue="greaterthan" itemLabel="Greater Than" />
+							<f:selectItem itemValue="equal" itemLabel="Equal To" />
+						</h:selectOneMenu></td>
+					<td>€: <h:inputText id="price" value="#{findVehicles.price}" /></td>
+				</tr>
+
+				<tr>
+					<td>Colour:</td>
+					<td><h:inputText id="Colour" value="#{findVehicles.colour}" /></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td>Fuel:</td>
+					<td><h:selectOneMenu value="#{findVehicles.fuel}">
+							<f:selectItem itemValue="petrol" itemLabel="Petrol" />
+							<f:selectItem itemValue="diesel" itemLabel="Diesel" />
+						</h:selectOneMenu></td>
+					<td></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<br />
+		<h:commandButton value="Search" action="find_vehicle_result" />
+	</h:form>
+
+	<br />
+	<div>
+		<h:link outcome="index"> Home </h:link>
+	</div>
+</h:body>
+
+
+
+
+</html>

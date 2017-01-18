@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Garage - Add Model</title>
+</h:head>
+
+<h:body>
+	<h:form>
+
+		<h1>Add Vehicle</h1>
+		<h:messages globalOnly="true" style="color:red;margin:8px;" />
+
+
+		<table>
+			<tbody>
+
+				<tr>
+					<td>Registration:</td>
+
+					<td><h:inputText id="Registration" value="#{vehicle.reg}"
+							required="true" requiredMessage=" Registration is mandatory" /></td>
+
+					<td><h:message for="Registration" style="color:red" /></td>
+
+				</tr>
+
+				<tr>
+					<td>Manufacturer Code:</td>
+
+					<td><h:inputText id="Manufacturer" value="#{vehicle.manuCode}"
+							required="true" requiredMessage=" Manufacturer is mandatory" /></td>
+
+					<td><h:message for="Manufacturer" style="color:red" /></td>
+
+				</tr>
+
+				<tr>
+					<td>Model:</td>
+
+					<td><h:inputText id="Model" value="#{vehicle.modelCode}"
+							required="true" requiredMessage=" Model is mandatory" /></td>
+
+					<td><h:message for="Model" style="color:red" /></td>
+
+				</tr>
+
+				<tr>
+					<td>Mileage:</td>
+
+					<td><h:inputText id="Mileage" value="#{vehicle.mileage}" /></td>
+
+					<td></td>
+
+				</tr>
+
+				<tr>
+					<td>Price:</td>
+
+					<td><h:inputText id="Price" value="#{vehicle.price}"
+							required="true" requiredMessage=" Price is mandatory" /></td>
+
+					<td><h:message for="Price" style="color:red" /></td>
+
+				</tr>
+
+				<tr>
+					<td>Colour:</td>
+
+					<td><h:inputText id="Colour" value="#{vehicle.colour}" /></td>
+
+					<td></td>
+
+				</tr>
+
+
+
+				<tr>
+					<td>Fuel:</td>
+
+					<td><h:selectOneMenu value="#{vehicle.fuel}">
+							<f:selectItem itemValue="petrol" itemLabel="Petrol" />
+							<f:selectItem itemValue="diesel" itemLabel="Diesel" />
+						</h:selectOneMenu></td>
+
+					<td></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+
+		<br />
+		<h:commandButton value="Add"
+			action="#{controllerVehicle.addVehicles(vehicle)}" />
+	</h:form>
+
+	<br />
+	<div>
+		<h:link outcome="index"> Home </h:link>
+		<br />
+		<h:link outcome="list_vehicle">  Vehicle </h:link>
+	</div>
+</h:body>
+
+
+
+
+</html>

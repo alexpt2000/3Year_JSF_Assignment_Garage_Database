@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Garage - Model</title>
+	<h:outputStylesheet library="css" name="vehicle-style.css" />
+</h:head>
+
+<h:body>
+
+	<f:metadata>
+		<f:event type="preRenderView"
+			listener="#{controllerVehicle.LoadVehicles()}" />
+	</f:metadata>
+
+	<div>
+		<h:messages style="color:red;margin:8px;" />
+	</div>
+
+
+
+	<h:form>
+
+		<br />
+
+		<div>
+			<h:commandButton value="Add Vehicle" action="add_vehicle" />
+		</div>
+
+		<br />
+
+		<h:dataTable
+			columnClasses="column1,column2,column3, column4, column5, column6, column7, column8"
+			value="#{controllerVehicle.vehicles}" var="v"
+			styleClass="garage-table" headerClass="garage-table-header"
+			rowClasses="garage-table-odd-row,garage-table-even-row">
+
+			<h:column>
+				<f:facet name="header">Registration</f:facet>
+    			#{v.reg}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Manufacturer Code</f:facet>
+    			#{v.manuCode}
+   		</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Model Code</f:facet>
+    			#{v.modelCode}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Mileage</f:facet>
+    			#{v.mileage}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Price</f:facet>
+    			#{v.price}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Colour</f:facet>
+    			#{v.colour}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Fuel</f:facet>
+    			#{v.fuel}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Action</f:facet>
+
+				<h:commandLink value="All Details"
+					action="#{controllerVehicle.loadSimgleVehicle(v.reg)}" />
+
+			</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+
+	<br />
+
+	<div>
+		<h:link outcome="index"> Home </h:link>
+	</div>
+</h:body>
+
+</html>
+

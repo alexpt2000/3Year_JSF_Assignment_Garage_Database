@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Garage - Update Manufacturer</title>
+</h:head>
+
+<h:body>
+	<h:form>
+
+		<h1>Update Manufacturer</h1>
+		<h:messages globalOnly="true" style="color:red;margin:8px;" />
+
+		<table>
+			<tbody>
+				<tr>
+					<td>Code:</td>
+					<td><h:inputText id="code"
+							readonly="#{facesContext.renderResponse}"
+							value="#{manufacturer.manuCode}" /></td>
+				</tr>
+
+
+				<tr>
+					<td>Name:</td>
+					<td><h:inputText id="name" value="#{manufacturer.manuName}"
+							required="true" requiredMessage=" Name is mandatory" /></td>
+					<td><h:message for="name" style="color:red" /></td>
+				</tr>
+
+
+				<tr>
+					<td>Details:</td>
+					<td><h:inputText value="#{manufacturer.manuDetails}"
+							style="width:500px" /></td>
+					<td></td>
+				</tr>
+
+
+
+			</tbody>
+		</table>
+
+		<br />
+		<h:commandButton value="Save"
+			action="#{controllerManufacturer.saveManufacturer(manufacturer)}" />
+	</h:form>
+
+	<br />
+	<div>
+		<h:link outcome="index"> Home </h:link>
+		<br />
+		<h:link outcome="list_manufacturers">  Manufacturers </h:link>
+	</div>
+</h:body>
+
+
+
+
+</html>

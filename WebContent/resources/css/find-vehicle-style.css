@@ -1,0 +1,65 @@
+.garage-table {
+	border-collapse: collapse;
+}
+
+.garage-table-header {
+		font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: white;
+	text-align: left;
+	background: none repeat scroll 0 0 #004040;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 10px;
+}
+
+.garage-table-odd-row {
+		font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	background: none repeat scroll 0 0 #a0a0a0;
+	border-top: 1px solid #BBBBBB;
+}
+
+.garage-table-even-row {
+		font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	background: none repeat scroll 0 0 #cdcdcd;
+	border-top: 1px solid #BBBBBB;
+}
+
+.column1 {
+	width: 150px;
+}
+
+.column2 {
+	width: 100px;
+}
+
+.column3 {
+	width: 100px;
+}
+
+.column4 {
+	width: 100px;
+}
+
+.column5 {
+	width: 150px;
+}
+
+.column6 {
+	width: 100px;
+}
+
+.column7 {
+	width: 100px;
+}
+
+.column8 {
+	width: 100px;
+}
+
+.column9 {
+	width: 100px;
+}

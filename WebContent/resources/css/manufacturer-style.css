@@ -1,0 +1,45 @@
+.garage-table {
+	border-collapse: collapse;
+}
+
+.garage-table-header {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: white;
+	text-align: left;
+	background: none repeat scroll 0 0 #400080;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 10px;
+}
+
+.garage-table-odd-row {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	background: none repeat scroll 0 0 #a0a0a0;
+	border-top: 1px solid #BBBBBB;
+}
+
+.garage-table-even-row {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	background: none repeat scroll 0 0 #cdcdcd;
+	border-top: 1px solid #BBBBBB;
+}
+
+.column1 {
+	width: 50px;
+}
+
+.column2 {
+	width: 100px;
+}
+
+.column3 {
+	width: 500px;
+}
+
+.column4 {
+	width: 50px;
+}

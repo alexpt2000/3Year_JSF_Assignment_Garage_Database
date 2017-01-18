@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Garage - Model</title>
+	<h:outputStylesheet library="css" name="model-style.css" />
+</h:head>
+
+<h:body>
+
+	<f:metadata>
+		<f:event type="preRenderView"
+			listener="#{controllerModel.LoadModels()}" />
+	</f:metadata>
+
+	<div>
+		<h:messages style="color:red;margin:8px;" />
+	</div>
+
+
+
+	<h:form>
+
+		<br />
+
+		<div>
+			<h:commandButton value="Add Model" action="add_model" />
+		</div>
+
+		<br />
+
+		<h:dataTable columnClasses="column1,column2,column3, column4"
+			value="#{controllerModel.models}" var="m" styleClass="garage-table"
+			headerClass="garage-table-header"
+			rowClasses="garage-table-odd-row,garage-table-even-row">
+
+			<h:column>
+				<f:facet name="header">Manufacturer Code</f:facet>
+    			#{m.manuCode}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Model Code</f:facet>
+    			#{m.modelCode}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Model Name</f:facet>
+    			#{m.modelName}
+   		</h:column>
+
+			<h:column>
+				<f:facet name="header">Model Description</f:facet>
+    			#{m.modelDesc}
+   		</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+
+	<br />
+
+	<div>
+		<h:link outcome="index"> Home </h:link>
+	</div>
+</h:body>
+
+</html>
+
